@@ -1,0 +1,5 @@
+*.[oa]  #ignore the file end with .a or .o
+*~
+/TODO
+build/
+doc/*.txt
