@@ -29,8 +29,17 @@ struct sendLine makeSendline(char *getInput,char* lineHead,char lineTail){
    memset(&sendline,0,sizeof(sendline));
    strcpy(sendline.lineHead,lineHead);
    sendline.lineTail = lineTail;
-   strncpy(sendline.city,getInput,sizeof(sendline.city));
-   sendline.city[29] = 0;
+
+   int i=0;   
+   while(getInput[i]!=0x20 && i<sizeof(sendline.city)){      
+      if(getInput[i]=='\0'){
+        break;
+      }      
+      i++;      
+   }
+   memset(sendline.city,0,sizeof(sendline.city));
+   strncpy(sendline.city,getInput,i);   
+
    return sendline;
 }
 

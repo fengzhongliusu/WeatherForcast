@@ -20,7 +20,7 @@ int main(int argc,char** argv){
   memset(&servaddr,0,sizeof(servaddr));
   servaddr.sin_family = AF_INET;
   servaddr.sin_port = htons(SERVER_PORT);
-  servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");    
+  servaddr.sin_addr.s_addr = inet_addr("114.212.191.33");    
 
   if(connect(sockfd,(struct sockaddr*)&servaddr,sizeof(servaddr))<0){
     perror("failed to connet the server!");
